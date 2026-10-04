@@ -121,6 +121,22 @@ Tests cover real addendum parsing and SKU relationships, HTML labels/cleanup, to
 
 Final verification: 23 tests passed; dependency checks reported no broken requirements; editable package installation and CLI startup succeeded. One upstream TestClient deprecation warning remains. The missing-provider CLI error was also verified.
 
+## React workspace
+
+Start the backend from the repository root with `python -m rfp_intelligence.cli serve`. In a second terminal:
+
+```powershell
+cd frontend
+npm ci
+npm run dev
+```
+
+Open http://127.0.0.1:5173. The Vite server proxies `/api` to port 8000. Select a bid to search documents, inspect source passages, ask cited questions, or extract and export the 20-field record. Index a new folder through the sidebar; it must be inside the configured backend data root. Q&A and fresh extraction require the LLM settings described above; search and saved record review do not.
+
+`npm run build` type-checks and creates `frontend/dist`. `npm run preview` serves that build locally with the same API proxy. Production hosting must route `/api/*` to FastAPI with the prefix removed; the static build alone does not include the backend. Run one backend process for the local Qdrant store.
+
+Frontend choices and their reasons are in [docs/FRONTEND_DESIGN.md](docs/FRONTEND_DESIGN.md). Verification: production build passed, 24 backend tests passed, and browser checks covered real search/source inspection, missing-provider errors, folder dialog dismissal, and a 390px mobile viewport without horizontal overflow. Live generated answers and extraction records remain unverified until a provider is configured.
+
 ## Generate submission artifacts
 
 After configuring a provider:

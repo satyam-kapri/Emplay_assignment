@@ -16,3 +16,5 @@
 - Final checks: 23 tests passed, dependency compatibility check passed, packaged CLI startup passed, and absent LLM configuration produced the intended actionable error. One upstream TestClient deprecation warning remains.
 
 Failures observed during setup were handled explicitly: package/model downloads and pytest temporary fixture access required approved execution outside the sandbox. These restrictions are environment-specific, separate from application behavior.
+
+React frontend follow-up: implemented the explicitly requested UI with React/TypeScript/Vite, dynamic bid discovery, search filters, citation inspection, question and extraction flows, saved records, JSON export, indexing, errors and responsive layout. Reasons are recorded in FRONTEND_DESIGN.md. Added API catalog/saved-record tests; all 24 tests and the frontend production build pass. Real browser search and missing-provider behavior were verified. Preview runs on port 5173 with API on 8000.

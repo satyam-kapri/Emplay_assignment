@@ -1,4 +1,5 @@
 import asyncio
+import json
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import Field
@@ -32,6 +33,36 @@ def create_app(config=None):
     @app.get("/health")
     def health():
         return {"status": "ok"}
+
+    @app.get("/bids")
+    def bids():
+        result = []
+        for folder in sorted(config.data_root.iterdir()):
+            if not folder.is_dir() or folder.name.startswith(".") or not folder.resolve().is_relative_to(config.data_root):
+                continue
+            if any((folder / marker).is_file() for marker in ("package.json", "pyproject.toml")):
+                continue  # Application source directories are not bid folders.
+            files = sorted(p.name for p in folder.iterdir() if p.suffix.lower() in {".pdf", ".html", ".htm"} and p.is_file())
+            if not files:
+                continue
+            manifests = app.state.search.store.manifests(folder.name)
+            warnings = app.state.search.store.warnings([folder.name])
+            result.append({"id": folder.name, "folder": str(folder.resolve()), "files": files,
+                           "indexed_files": len(manifests), "warnings": warnings,
+                           "has_extraction": (config.output_dir / f"{folder.name}.json").is_file()})
+        return result
+
+    @app.get("/bids/{bid_id}/extraction")
+    def saved_extraction(bid_id: str):
+        if bid_id not in {bid["id"] for bid in bids()}:
+            raise HTTPException(404, "Bid folder not found")
+        target = (config.output_dir / f"{bid_id}.json").resolve()
+        if not target.is_relative_to(config.output_dir.resolve()) or not target.is_file():
+            raise HTTPException(404, "No saved extraction yet")
+        try:
+            return json.loads(target.read_text(encoding="utf-8"))
+        except (ValueError, OSError) as exc:
+            raise HTTPException(500, "Saved extraction cannot be read") from exc
 
     @app.post("/index")
     async def index(request: FolderRequest):
