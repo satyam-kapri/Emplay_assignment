@@ -12,10 +12,10 @@ Bid1 RFP physical pages 54-59 have no extractable text. Readable content remains
 
 ## Setup
 
-Use Python 3.11+ (validated on Python 3.12 on Windows). From this repository:
+Use Python 3.12 on Windows for the checked-in dependency lock. Install Python 3.12 if `py -3.12 --version` cannot find it. From this repository:
 
 ```powershell
-python -m venv .venv
+py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements-lock.txt
 python -m pip install --no-build-isolation --no-deps -e .
@@ -23,6 +23,8 @@ Copy-Item .env.example .env
 ```
 
 The lock records the environment used for verification. It includes Windows `pywin32`; on another operating system use `python -m pip install -e ".[test]"` instead of that Windows lock. Network access is needed initially for package installation and model downloads. Embedding/reranking models are cached under `.data/models`; vectors and manifests under `.data`. These files and `.env` are excluded from Git.
+
+Do not recreate an existing virtual environment with a different Python version: compiled packages are specific to their Python version. A NumPy error mentioning `cp312` binaries and a Python 3.14 interpreter indicates a mixed environment. Stop the backend, rename `.venv` to a backup, and create a fresh Python 3.12 environment with the setup commands above. Keep your existing `.env` rather than copying over it. This preserves credentials, documents and cached indexes while reinstalling compatible packages.
 
 Configure these only for generated extraction/Q&A:
 

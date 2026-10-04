@@ -27,7 +27,8 @@ class Reranker:
 
 @pytest.fixture
 def config(tmp_path):
-    return replace(Config.load(), data_dir=tmp_path / "data", output_dir=tmp_path / "out", data_root=tmp_path)
+    return replace(Config.load(), data_dir=tmp_path / "data", output_dir=tmp_path / "out", data_root=tmp_path,
+                   llm_url="", llm_model="", llm_key="")
 
 
 @pytest.fixture
