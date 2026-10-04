@@ -1,3 +1,5 @@
+[Watch the project demo on Loom](https://www.loom.com/share/8fd38be3c6a048c78857034902d85a27)
+
 # RFP Intelligence Platform
 
 Python application for HTML/PDF bid ingestion, standalone hybrid retrieval and evidence-grounded multi-agent extraction/Q&A. Each bid folder is processed as a unit; production code contains no Bid1/Bid2 answer branches or hard-coded dates/SKUs.
@@ -8,7 +10,7 @@ The parser/search stack is exercised on the supplied documents and benchmarked s
 
 **Live LLM extraction and Q&A are not yet verified:** no endpoint/model/key was configured during implementation. The code fails clearly on missing configuration rather than fabricating output. `scripts/demo.py` generates the two real bid JSON files, at least ten cited Q&A examples and extraction traces once a compatible LLM is configured. Those generated deliverables require manual correctness review before submission.
 
-Bid1 RFP physical pages 54-59 have no extractable text. Readable content remains searchable; warnings and partial status propagate to outputs. OCR and other assignment bonuses are deferred. A demo recording and a genuinely unseen external-bid evaluation have not been produced.
+Bid1 RFP physical pages 54-59 have no extractable text. Readable content remains searchable; warnings and partial status propagate to outputs. OCR and other assignment bonuses are deferred. The supplied demo recording is linked above; its contents have not been reviewed here. A genuinely unseen external-bid evaluation has not been produced.
 
 ## Setup
 
@@ -124,6 +126,8 @@ Tests cover real addendum parsing and SKU relationships, HTML labels/cleanup, to
 Final verification: 23 tests passed; dependency checks reported no broken requirements; editable package installation and CLI startup succeeded. One upstream TestClient deprecation warning remains. The missing-provider CLI error was also verified.
 
 ## React workspace
+
+For Docker packaging and AWS EC2 hosting, see [docs/AWS_DEPLOYMENT.md](docs/AWS_DEPLOYMENT.md). Quick start after configuring `.env`: `docker compose up -d --build`, then open http://127.0.0.1:8080 and index both bids through the UI. Docker Engine must be running. The Docker setup uses persistent volumes and a separate Linux index.
 
 After setting up `.env`, use two PowerShell terminals. If a server is already running, stop it with Ctrl+C first: the backend reads `.env` at startup, so it must restart to pick up your Gemini configuration.
 

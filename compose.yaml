@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      RFP_DATA_ROOT: /bids
+      RFP_DATA_DIR: /data
+      RFP_OUTPUT_DIR: /outputs
+    volumes:
+      - ./Bid1:/bids/Bid1:ro
+      - ./Bid2:/bids/Bid2:ro
+      - rfp_data:/data
+      - rfp_outputs:/outputs
+    # Single process: embedded Qdrant cannot share its directory across replicas.
+    expose: ["8000"]
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${RFP_BIND_ADDRESS:-127.0.0.1}:${RFP_HTTP_PORT:-8080}:80"
+volumes:
+  rfp_data:
+  rfp_outputs:

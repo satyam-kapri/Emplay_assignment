@@ -23,14 +23,16 @@ def main():
             p.add_argument("--addendum-number", action="append", type=int, default=[])
             p.add_argument("--top-k", type=int, default=5)
             p.add_argument("--mode", choices=["dense", "hybrid", "rerank"], default=None)
-    sub.add_parser("serve").add_argument("--port", type=int, default=8000)
+    server = sub.add_parser("serve")
+    server.add_argument("--port", type=int, default=8000)
+    server.add_argument("--host", default="127.0.0.1")
     sub.add_parser("evaluate").add_argument("--questions", default="eval/questions.json")
     args = parser.parse_args()
     config = Config.load()
     if args.command == "serve":
         import uvicorn
         from rfp_intelligence.api.app import create_app
-        uvicorn.run(create_app(config), host="127.0.0.1", port=args.port)
+        uvicorn.run(create_app(config), host=args.host, port=args.port)
         return
     service = SearchService(config)
     try:
