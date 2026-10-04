@@ -123,15 +123,34 @@ Final verification: 23 tests passed; dependency checks reported no broken requir
 
 ## React workspace
 
-Start the backend from the repository root with `python -m rfp_intelligence.cli serve`. In a second terminal:
+After setting up `.env`, use two PowerShell terminals. If a server is already running, stop it with Ctrl+C first: the backend reads `.env` at startup, so it must restart to pick up your Gemini configuration.
+
+**Terminal 1 — backend:**
 
 ```powershell
-cd frontend
+cd C:\Users\Admin\Emplay_assignment
+.\.venv\Scripts\python.exe -m rfp_intelligence.cli serve
+```
+
+Using the virtual environment's Python directly avoids PowerShell activation-policy issues and ensures the installed project dependencies are used. Check http://127.0.0.1:8000/health for `{"status":"ok"}`; interactive API documentation is at http://127.0.0.1:8000/docs. Health confirms the server is running, not that Gemini credentials work.
+
+**Terminal 2 — React frontend:**
+
+```powershell
+cd C:\Users\Admin\Emplay_assignment\frontend
 npm ci
 npm run dev
 ```
 
 Open http://127.0.0.1:5173. The Vite server proxies `/api` to port 8000. Select a bid to search documents, inspect source passages, ask cited questions, or extract and export the 20-field record. Index a new folder through the sidebar; it must be inside the configured backend data root. Q&A and fresh extraction require the LLM settings described above; search and saved record review do not.
+
+`npm ci` is needed on first frontend setup or after the lockfile changes; subsequent starts only need `npm run dev`. Keep both terminals running, and stop each with Ctrl+C when finished.
+
+**Verify the Gemini setup:** select Bid1, click **Update Bid1 index** if it is not indexed, then use **Ask a question** with “What is the submission deadline?”. Inspect the returned source citations. Next, open **Bid extraction** and click **Extract bid**; review the fields and export JSON. These actions send retrieved document evidence to your configured LLM provider and may incur API usage. A successful cited answer verifies the provider connection; the generated facts still need source review.
+
+Gemini uses `LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai`, your available Gemini model ID in `LLM_MODEL`, and your API key in `LLM_API_KEY`. Keep the key only in the ignored backend `.env`; never place it in frontend code. `LLM_TIMEOUT=120` can allow longer generation requests. Provider choice reuses the existing compatible adapter, avoiding a second generation implementation.
+
+If you see a missing-settings error, check `.env` in the repository root and restart Terminal 1. HTTP 401/403 usually calls for checking key/access settings; HTTP 404 calls for checking the endpoint/model ID; HTTP 429 indicates rate or quota limits. If port 8000 or 5173 is occupied, stop the previous server before restarting. Do not run CLI extraction/indexing or `scripts.demo` alongside the API because they open the same local Qdrant store; stop Terminal 1 before using those commands.
 
 `npm run build` type-checks and creates `frontend/dist`. `npm run preview` serves that build locally with the same API proxy. Production hosting must route `/api/*` to FastAPI with the prefix removed; the static build alone does not include the backend. Run one backend process for the local Qdrant store.
 
