@@ -24,3 +24,9 @@ The original bonus-UI deferral is superseded by the user's explicit frontend req
 - Responsive navigation and a stacked evidence inspector keep document reading usable on small screens.
 
 Validation: production TypeScript/Vite build passed; 24 Python tests passed. Browser verification used real Bid1 retrieval, source inspection, provider configuration errors, dialog dismissal, and 390px mobile overflow checks. Generated answer/record rendering and exports require a live provider or a saved record and were not exercised with live generated data.
+
+## Monochrome refresh
+Visual thesis: white workspace, neutral gray context, black primary actions and modern Inter typography.
+Content plan: retain bid navigation and search/question/extraction workspaces with evidence beside results.
+Interaction thesis: retain quick tab/inspector transitions and focus affordances with reduced-motion support.
+Reasons: black is the requested primary color; neutral grays organize surfaces without competing accents. Inter and system sans-serif fallbacks give consistent modern typography across headings and source passages. Smaller semibold headings, clearer body text, thin dividers and removed search shadows simplify the reading hierarchy.
