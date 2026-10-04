@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+.env
+.data/
+*.egg-info/
+outputs/private*/

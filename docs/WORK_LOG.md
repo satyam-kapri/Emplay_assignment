@@ -1,0 +1,18 @@
+# Work log
+
+## 4 October 2026
+
+- Inspected workspace and initialized Git because the provided folder had no repository.
+- Built typed schemas first to establish the 20-field and evidence contracts before agent implementation.
+- Added PDF/HTML ingestion, metadata and cleanup; audited all provided files to expose missing-page and table risks.
+- Implemented section/token-aware chunks, dense vectors, BM25, rank fusion, reranking, filters and versioned incremental indexing because the assignment requires an independently usable search engine.
+- Implemented separate extraction groups, addendum reconciliation, validator and report/Q&A roles with shared typed state and targeted bounded repairs.
+- Added a configurable LLM adapter and JSONL traces; generation requires local endpoint configuration rather than hard-coded secrets.
+- Added CLI and REST routes over shared services to avoid duplicated behavior.
+- Tested parsing, real SKU relationships, HTML label retention, incremental updates, filter isolation, citation integrity, feedback bounds, malformed provider JSON, provider timeout and API validation.
+- Prepared source-verified retrieval labels and actual benchmark outputs. See outputs/retrieval_evaluation.md for measurements and README for validation status.
+- Kept OCR/UI/deployment bonuses outside scope. No live extraction or Q&A results will be claimed without an actual configured provider run.
+- Verified editable package installation and retained the initial retrieval results. Final hybrid Recall@5 was 1.0000 and MRR@5 0.9583 on the 16-question regression partition. These are retrieval measurements; the partition was inspected for a parser bug and is not claimed to be an untouched benchmark.
+- Final checks: 23 tests passed, dependency compatibility check passed, packaged CLI startup passed, and absent LLM configuration produced the intended actionable error. One upstream TestClient deprecation warning remains.
+
+Failures observed during setup were handled explicitly: package/model downloads and pytest temporary fixture access required approved execution outside the sandbox. These restrictions are environment-specific, separate from application behavior.

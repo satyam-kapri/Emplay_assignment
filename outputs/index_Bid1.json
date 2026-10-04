@@ -1,0 +1,21 @@
+{
+  "bid_id": "Bid1",
+  "indexed": [
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+    "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html"
+  ],
+  "skipped": [],
+  "deleted": [],
+  "errors": [],
+  "warnings": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 54: empty or scanned; OCR deferred",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 55: empty or scanned; OCR deferred",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 56: empty or scanned; OCR deferred",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 57: empty or scanned; OCR deferred",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 58: empty or scanned; OCR deferred",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 59: empty or scanned; OCR deferred"
+  ],
+  "status": "partial"
+}

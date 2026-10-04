@@ -1,0 +1,72 @@
+[
+  {
+    "bid": "Bid1",
+    "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+    "blocks": 5,
+    "tables": 0,
+    "warnings": []
+  },
+  {
+    "bid": "Bid1",
+    "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+    "blocks": 1,
+    "tables": 0,
+    "warnings": []
+  },
+  {
+    "bid": "Bid1",
+    "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+    "blocks": 278,
+    "tables": 88,
+    "warnings": [
+      "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 54: empty or scanned; OCR deferred",
+      "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 55: empty or scanned; OCR deferred",
+      "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 56: empty or scanned; OCR deferred",
+      "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 57: empty or scanned; OCR deferred",
+      "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 58: empty or scanned; OCR deferred",
+      "JA-207652 Student and Staff Computing Devices FINAL.pdf: page 59: empty or scanned; OCR deferred"
+    ]
+  },
+  {
+    "bid": "Bid1",
+    "file": "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html",
+    "blocks": 44,
+    "tables": 0,
+    "warnings": []
+  },
+  {
+    "bid": "Bid2",
+    "file": "Contract_Affidavit.pdf",
+    "blocks": 17,
+    "tables": 0,
+    "warnings": []
+  },
+  {
+    "bid": "Bid2",
+    "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+    "blocks": 39,
+    "tables": 0,
+    "warnings": []
+  },
+  {
+    "bid": "Bid2",
+    "file": "Dell_Laptop_Specs.pdf",
+    "blocks": 29,
+    "tables": 2,
+    "warnings": []
+  },
+  {
+    "bid": "Bid2",
+    "file": "Mercury_Affidavit.pdf",
+    "blocks": 6,
+    "tables": 0,
+    "warnings": []
+  },
+  {
+    "bid": "Bid2",
+    "file": "PORFP_-_Dell_Laptop_Final.pdf",
+    "blocks": 19,
+    "tables": 12,
+    "warnings": []
+  }
+]

@@ -1,0 +1,288 @@
+[
+  {
+    "id": "q01",
+    "bid_id": "Bid1",
+    "question": "What is Bid1's submission deadline after all addendums?",
+    "split": "development",
+    "expected": [
+      {
+        "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "quote": "July 9, 2024 at 2:00 PM CST"
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "bid_id": "Bid1",
+    "question": "Must bidders sign and return Addendum 2?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "quote": "Please sign this addendum"
+      }
+    ]
+  },
+  {
+    "id": "q03",
+    "bid_id": "Bid1",
+    "question": "What USB version is the minimum requirement for the non-touch display?",
+    "split": "development",
+    "expected": [
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "quote": "USB 3.1 is a minimum requirement"
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "bid_id": "Bid1",
+    "question": "Which devices require etching after clarification?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "quote": "only require etching on Laptops"
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "bid_id": "Bid1",
+    "question": "What warranty is required for student Chromebooks?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "quote": "one-year warranty"
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "bid_id": "Bid1",
+    "question": "What is the initial contract term and what renewal extensions are allowed?",
+    "split": "development",
+    "expected": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 2,
+        "quote": "three (3) year agreement"
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "bid_id": "Bid1",
+    "question": "What is the procurement buyer's email address?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 2,
+        "quote": "JALZATE@dallasisd.org"
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "bid_id": "Bid1",
+    "question": "When is the pre-proposal meeting?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 2,
+        "quote": "10-JUN-2024 14:00:00"
+      }
+    ]
+  },
+  {
+    "id": "q09",
+    "bid_id": "Bid1",
+    "question": "What white glove deployment services are required?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 3,
+        "quote": "asset decaling"
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "bid_id": "Bid1",
+    "question": "What minimum RAM is required for Tier 1 student Chromebooks?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 4,
+        "quote": "Minimum 8GB DDR5 Memory"
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "bid_id": "Bid2",
+    "question": "Which master contract must eligible bidders be awarded under?",
+    "split": "development",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 1,
+        "quote": "060B5400007"
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "bid_id": "Bid2",
+    "question": "How must the Dell laptop bid be submitted?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 1,
+        "quote": "e-Procurement system"
+      }
+    ]
+  },
+  {
+    "id": "q13",
+    "bid_id": "Bid2",
+    "question": "Which mercury documentation must the master contractor provide?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 2,
+        "quote": "provide a Mercury Affidavit"
+      }
+    ]
+  },
+  {
+    "id": "q14",
+    "bid_id": "Bid2",
+    "question": "How soon after award must the Dell equipment be delivered?",
+    "split": "development",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 2,
+        "quote": "Delivery within 45 days of Award"
+      }
+    ]
+  },
+  {
+    "id": "q15",
+    "bid_id": "Bid2",
+    "question": "What manufacturer authorization is required of the contractor?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 2,
+        "quote": "authorized reseller for Dell"
+      }
+    ]
+  },
+  {
+    "id": "q16",
+    "bid_id": "Bid2",
+    "question": "When must invoices be submitted after equipment delivery?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 2,
+        "quote": "within 10 days of delivering"
+      }
+    ]
+  },
+  {
+    "id": "q17",
+    "bid_id": "Bid2",
+    "question": "Who is the agency point of contact?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 3,
+        "quote": "Tamaira Hawkins"
+      }
+    ]
+  },
+  {
+    "id": "q18",
+    "bid_id": "Bid2",
+    "question": "What extended warranty is required for the Dell machines?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 3,
+        "quote": "Dell Limited Hardware Warranty"
+      }
+    ]
+  },
+  {
+    "id": "q19",
+    "bid_id": "Bid2",
+    "question": "What memory specification corresponds to SKU 370-BBTL?",
+    "split": "development",
+    "expected": [
+      {
+        "file": "Dell_Laptop_Specs.pdf",
+        "page": 1,
+        "quote": "370-BBTL | 16 GB:"
+      }
+    ]
+  },
+  {
+    "id": "q20",
+    "bid_id": "Bid2",
+    "question": "What processor corresponds to SKU 379-BFNZ?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "Dell_Laptop_Specs.pdf",
+        "page": 1,
+        "quote": "379-BFNZ | Intel Core Ultra 5"
+      }
+    ]
+  },
+  {
+    "id": "q21",
+    "bid_id": "Bid2",
+    "question": "What closing date and timezone are shown on the Dell bid portal?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+        "page": null,
+        "quote": "Closing Date: 06/10/2024 02:00 PM EDT"
+      }
+    ]
+  },
+  {
+    "id": "q22",
+    "bid_id": "Bid1",
+    "question": "What certifications must proposing resellers submit?",
+    "split": "held_out",
+    "expected": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 3,
+        "quote": "factory-authorized repair and maintenance"
+      }
+    ]
+  }
+]
