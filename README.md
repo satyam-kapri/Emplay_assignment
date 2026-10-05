@@ -1,4 +1,5 @@
 [Watch the project demo on Loom](https://www.loom.com/share/8fd38be3c6a048c78857034902d85a27)
+LIVE DEPLOYED PROJECT LINK: http://15.206.205.43:8080/
 
 # RFP Intelligence Platform
 
